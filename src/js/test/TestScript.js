@@ -134,13 +134,13 @@ console.log(obj);*/
 /**
  * window onload方法是dom窗体渲染方法
  */
-window.onload=function () {
+/*window.onload=function () {
   var linkNode=document.getElementById('link');
   linkNode.addEventListener('click',function (e) {
     console.log(e);
   },false);
 
- /* linkNode.onmouseover=function () {
+ /!* linkNode.onmouseover=function () {
     console.log('鼠标悬浮在上面了');
   };
   linkNode.onmousedown=function () {
@@ -148,6 +148,14 @@ window.onload=function () {
   }
   linkNode.onclick=function () {
     console.log("点击了");
-  }*/
+  }*!/
+}*/
+
+window.onload=function () {
+  var ul=document.querySelector('.list_group');
+  ul.addEventListener('click',function (e) {
+    alert("alt"+e.target.alt);
+  },false);
 }
+
 

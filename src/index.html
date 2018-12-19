@@ -1,21 +1,29 @@
-<!doctype html>
-<html class="no-js" lang="">
-
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>测试</title>
+  <title></title>
+  <script type="text/javascript" src="./js/test/TestScript.js"/>
+  <script>
+    alert('xxx');
+  </script>
+  <script>
+    function divclick() {
+      alert('xxx');
+    }
+    document.write('testxxxx:'+(1/0));
+  </script>
+  <script type="text/javascript">
+/*    let x=['zhangsan','lisi','wangwu'];
+     let [z,l,w]=x;
+    document.write(z+l+w);*/
+    var x={name:"zhangsan",age:30};
+    var {name}=x;//name 和x对象的属性名称一样
+var {name:name1}=x;//可以在属性后面增加:别名的方式解构
+    document.write(name+name1);//输出zhangsanzhangsan
+  </script>
 </head>
-
 <body>
-<div id="dd">
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-</div>
-<a id="link" herf="http://www.baidu.com" class="btn">百度</a>
 
-<script src="./js/test/TestScript.js"></script>
+<div onclick="divclick()">test</div>
 </body>
-
 </html>
