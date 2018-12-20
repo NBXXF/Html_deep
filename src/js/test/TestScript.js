@@ -151,11 +151,11 @@ console.log(obj);*/
   }*!/
 }*/
 
-window.onload=function () {
-  var ul=document.querySelector('.list_group');
-  ul.addEventListener('click',function (e) {
-    alert("alt"+e.target.alt);
-  },false);
-}
+// window.onload=function () {
+//   var ul=document.querySelector('.list_group');
+//   ul.addEventListener('click',function (e) {
+//     alert("alt"+e.target.alt);
+//   },false);
+// }
 
 

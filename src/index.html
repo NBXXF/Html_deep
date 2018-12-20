@@ -10,16 +10,65 @@
     function divclick() {
       alert('xxx');
     }
-    document.write('testxxxx:'+(1/0));
+
+    document.write('testxxxx:' + (1 / 0));
   </script>
   <script type="text/javascript">
-/*    let x=['zhangsan','lisi','wangwu'];
-     let [z,l,w]=x;
-    document.write(z+l+w);*/
-    var x={name:"zhangsan",age:30};
-    var {name}=x;//name 和x对象的属性名称一样
-var {name:name1}=x;//可以在属性后面增加:别名的方式解构
-    document.write(name+name1);//输出zhangsanzhangsan
+    /*    let x=['zhangsan','lisi','wangwu'];
+         let [z,l,w]=x;
+        document.write(z+l+w);*/
+    //    var x={name:"zhangsan",age:30};
+    //    var {name}=x;//name 和x对象的属性名称一样
+    //var {name:name1}=x;//可以在属性后面增加:别名的方式解构
+    //    document.write(name+name1);//输出zhangsanzhangsan
+
+    //解构参数
+    /* function test(name,age,{address,desc}={}) {
+       console.log(name,age,address,desc);
+     }
+     test('zhangsan',21,{address:'beijin',desc:'my name is zhangsan',other:'xxx'});//输出 zhangsan 21 beijin my name is zhangsan
+   */
+
+
+    var apple = {name: "apple", color: 'red'};
+    apple.age = 2;
+    apple['price'] = '10$';
+    console.log('apple:', apple);
+
+    var app2 = {
+      __proto__: apple,
+    }
+    console.log('apple2:', JSON.stringify(app2));
+    console.log(Object.getPrototypeOf(app2));
+
+    //  function check(datas) {
+    //    var i=0;
+    //    return {
+    //      next(){
+    //        var done=i>=datas.length;
+    //        var value=!done?datas[i++]:undefined;
+    //        return {
+    //          done:done,
+    //          value:value,
+    //        };
+    //      }
+    //    }
+    //  }
+    //  let iter=check(['a','b','c','d']);
+    //  console.log(iter.next());
+    //  console.log(iter.next());
+
+    //生成器 - Generators
+
+    function chef(datas) {
+      for (var i = 0; i < datas.length; i++) {
+        yield datas[i];
+      }
+    }
+    var iter=chef(['a','b','c','d']);
+    console.log(iter.next());
+    console.log(iter.next());
+
   </script>
 </head>
 <body>
